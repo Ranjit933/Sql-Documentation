@@ -1,0 +1,19 @@
+ProductID,,,,,
+Date,,,,,
+CustomerID,Products,Manufacturers,Sales ,Customers,Campaigns
+CampaignID,ProductID (Primary Key),ManufacturerID (Primary Key),SaleID (Primary Key),CustomerID (Primary Key),CampaignID (Primary Key)
+Units,Product,Manufacturer,ProductID (Foreign Key),Email Name,Campaign Details
+Product,Category,,CustomerID (Foreign Key),ZipCode,
+Category,Segment,,CampaignID (Foreign Key),City,
+Segment,ManufacturerID (Foreign Key),,Date,State,
+ManufacturerID,,,Units,Region,
+Manufacturer,,,Unit Cost,District,
+Unit Cost,,,Unit Price,Country,
+Unit Price,,,,,
+ZipCode,,,,,
+Email Name,,,,,
+City,,,,,
+State,,,,,
+Region,,,,,
+District,,,,,
+Country,,,,,
