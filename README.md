@@ -1,1 +1,3 @@
-# Sql-Documentation
+```
+ CREATE DATABASE [Data Analytics]
+```
