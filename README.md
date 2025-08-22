@@ -994,7 +994,7 @@ SELECT FirstName,Salary,Hire_date,DATEDIFF(MONTH, Hire_date, GETDATE()) AS Tenur
 FROM Employee
 ```
 ## 66.Convert comma-seprated values into rows
-	```sql
+```sql
 SELECT CP.PlayerID,CP.PlayerName,s.value AS Skill
 FROM CricketPlayers CP
 CROSS APPLY STRING_SPLIT(CP.Role, ',') AS s
