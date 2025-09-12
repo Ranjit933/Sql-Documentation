@@ -19,9 +19,13 @@ EXEC SP_HELP
 
 EXEC sp_who2
 ```
-## Checking constrant keys
+## Checking primary keys for freign key use sp_f_keys
 ```sql
 EXEC sp_pkeys 'Table_Name'
+```
+## For All constrant keys
+```sql
+EXEC sp_helpconstraint 'Table_Name'
 ```
 ```sql
 INSERT INTO Products VALUES(1,'Laptop','Electronics',800),
