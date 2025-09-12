@@ -19,6 +19,10 @@ EXEC SP_HELP
 
 EXEC sp_who2
 ```
+## Checking constrant keys
+```sql
+EXEC sp_pkeys 'Table_Name'
+```
 ```sql
 INSERT INTO Products VALUES(1,'Laptop','Electronics',800),
 						   (2,'T-shirt','Apparel',20),
