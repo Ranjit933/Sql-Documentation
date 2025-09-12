@@ -125,12 +125,18 @@ UPDATE Orders
 SET TotalAmount = 100
 WHERE OrderID =3
 ```
-## To see how many tables are there
+## To see how many tables are there(MetaData Query)
 ```sql
 SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_NAME LIKE '%TABLE_NAME%'
 ```
-
+## Table Defination
+```sql
+--Table Defination
+SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'TABLE_NAME';
+```
 ## OFFSET
 ```sql
 SELECT * FROM Employee
