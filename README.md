@@ -753,7 +753,7 @@ SELECT Salary FROM (
 				   )T
 WHERE RNK = 5
 ```
-##39.Find the department with no employee
+## 39.Find the department with no employee
 ```sql
 SELECT E.* FROM Employee E
 LEFT JOIN Employee D ON E.EmployeeID = D.EmployeeID
@@ -932,7 +932,7 @@ WHERE RN IN (2,3,7)
 ## 57.Find highest and lowest salary in the employee without using aggrigation
 
 ### Highest Salary
-```
+```sql
 SELECT * FROM (
 			SELECT *, ROW_NUMBER() OVER(ORDER BY Salary DESC) AS rn
 			FROM Employee
