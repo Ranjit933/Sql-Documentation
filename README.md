@@ -1119,7 +1119,7 @@ FROM Employee
 ```sql
 SELECT SaleDate,Amount,CAST(ROUND(AVG(Amount) OVER(ORDER BY SaleDate ROWS BETWEEN 2 PRECEDING AND CURRENT ROW),0) AS INT) AS MovingAvg
 FROM Sales
-``
+```
 ```sql
 INSERT INTO Sales (SaleDate, Amount)
 VALUES 
