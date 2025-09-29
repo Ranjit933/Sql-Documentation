@@ -748,10 +748,10 @@ SELECT * FROM Employee
 ## 38.Select the 5th highest salary without using LIMIT/TOP or OFFSET
 ```sql
 SELECT Salary FROM (
-				   SELECT Salary,DENSE_RANK() OVER(Order BY Salary DESC) AS RNK
+				   SELECT Salary,ROW_NUMBER() OVER(Order BY Salary DESC) AS RWN
 				   FROM Employee
 				   )T
-WHERE RNK = 5
+WHERE RWN = 5
 ```
 ## 39.Find the department with no employee
 ```sql
