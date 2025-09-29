@@ -789,6 +789,18 @@ SELECT * FROM (
 			 ) S
 WHERE RNK = 1
 ```
+## Top Maximumn values
+
+```sql
+SELECT *
+FROM employee
+WHERE salary = (SELECT MAX(salary) FROM employee)
+AND employeeid = (
+					SELECT MIN(employeeid)
+					FROM employee
+					WHERE salary = (SELECT MAX(salary) FROM employee)
+				)
+```
 ## 44.Write a quary to show employee count by department and gender
 ```sql
 SELECT Department,Gender,COUNT(*) AS Emp_count
