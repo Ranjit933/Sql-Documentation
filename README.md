@@ -767,11 +767,13 @@ GROUP BY Department
 ```
 ## 41.Find the duplicate records using window function
 ```sql
-SELECT * FROM (
-			   SELECT *,RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS RNK
-			   FROM Employee
-			   )T
-WHERE RNK = 1
+SELECT *
+FROM (
+    SELECT *,
+           COUNT(*) OVER (PARTITION BY DEPARTMENT, SALARY) AS DUPLICATE_COUNT
+    FROM Employee
+) E
+WHERE DUPLICATE_COUNT > 1
 ```
 ## 42.Show count of distinct salaries in each department
 ```sql
