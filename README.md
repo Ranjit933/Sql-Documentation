@@ -379,6 +379,17 @@ FROM Employee
 GROUP BY FirstName,LastName,Salary
 HAVING COUNT(*)>1
 ```
+## Second Solution
+```sql
+WITH Duplicated
+AS
+(
+SELECT *, ROW_NUMBER() OVER(PARTITION BY SALARY ORDER BY SALARY DESC) AS RWN
+FROM Employee
+)
+SELECT * FROM Duplicated
+WHERE RWN >1
+```
 ## 5.Delete duplicate rows from a table but keep one copy
 ```sql
 SELECT * FROM Orders
