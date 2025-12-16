@@ -312,6 +312,12 @@ INSERT INTO ABC (NAME,SEX) VALUES('ABC','M'),('BC', 'F'),('CD', 'M')
 
 SELECT * FROM ABC
 ```
+## Update columns
+```sql
+UPDATE  XYZ
+SET NAME = 'VC'
+WHERE NAME = 'BC'
+```
 ## Alter Column
 ```sql
 ALTER TABLE ABC
