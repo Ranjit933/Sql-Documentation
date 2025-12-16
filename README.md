@@ -304,6 +304,56 @@ SELECT PlayerName,Runs,
 ROW_NUMBER() OVER(ORDER BY Runs DESC) AS Rownum
 FROM CricketPlayers
 ```
+## Create a table and Insert values
+```sql
+CREATE TABLE ABC(NAME VARCHAR(20), SEX CHAR(2))
+
+INSERT INTO ABC (NAME,SEX) VALUES('ABC','M'),('BC', 'F'),('CD', 'M')
+
+SELECT * FROM ABC
+```
+## Alter Column
+```sql
+ALTER TABLE ABC
+ALTER COLUMN NAME VARCHAR(20) NOT NULL
+```
+## Alter Primary key in Table
+```sql
+ALTER TABLE ABC
+ADD CONSTRAINT PK_ABC PRIMARY KEY(NAME)
+```
+```sql
+CREATE TABLE Department (
+    DeptID INT PRIMARY KEY,
+    DeptName VARCHAR(50)
+)
+
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    DeptID INT
+)
+```
+## Alter Foreign Key in table
+```sql
+ALTER TABLE Employee
+ADD CONSTRAINT FK_Employee_Department
+FOREIGN KEY (DeptID) REFERENCES Department(DeptID);
+```
+## Delete comand
+```sql
+DELETE FROM ABC
+
+DELETE FROM ABC
+WHERE NAME = 'ABC'
+```
+## Truncate Command where clause not used in truncate
+```sql
+TRUNCATE TABLE ABC
+```
+```sql
+DROP TABLE ABC
+```
 ```sql
 WITH Cricket
 AS
