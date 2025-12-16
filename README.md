@@ -659,9 +659,11 @@ WHERE C2.PlayerID IS NULL
 ```
 ## 21.Find the employee working on multipe project
 ```sql
-SELECT EmployeeID FROM Employee
-GROUP BY EmployeeID
-HAVING COUNT(DISTINCT EmployeeID) > 1
+SELECT E.FirstName,COUNT(W.ProjectID) AS NumberOfProjects
+FROM Employee E
+JOIN Employee W ON E.EmployeeID = W.EmployeeID
+GROUP BY E.FirstName 
+HAVING COUNT(W.ProjectID) > 1
 ```
 ## 22.Get count of employees by joining date(month wise)
 ```sql
