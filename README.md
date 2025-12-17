@@ -1386,6 +1386,27 @@ WHERE Price > (
 			  )
 
 ```
+
+## Scalar-Valued Function
+```sql
+CREATE FUNCTION Get_salaryIncrement(@CurrentSalary DECIMAL(18,2))
+RETURNS DECIMAL(18,2)
+AS BEGIN
+     RETURN @CurrentSalary * 1.12
+END
+
+SELECT SALARY,dbo.Get_salaryIncrement(salary) AS Increment_Salary
+FROM Employee
+
+
+ALTER FUNCTION Get_salaryIncrement(@CurrentSalary INT)
+RETURNS INT
+AS BEGIN
+  RETURN @CurrentSalary * 0.05
+END
+
+DROP Get_salaryIncrement
+```
 ## 95. CREATE FUNCTION ON CricketPlayers
 ```sql
 CREATE FUNCTION GetPlayerByName
