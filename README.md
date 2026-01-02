@@ -320,8 +320,19 @@ WHERE NAME = 'BC'
 ```
 ## Alter Column
 ```sql
-ALTER TABLE ABC
+ALTER TABLE TABLENAME
 ALTER COLUMN NAME VARCHAR(20) NOT NULL
+
+select * from Customer
+
+ALTER TABLE Customer
+ALTER COLUMN ID INT NOT NULL
+
+ALTER TABLE Customer
+ADD CONSTRAINT pk_Customer PRIMARY KEY(ID)
+
+ALTER TABLE Customer
+DROP CONSTRAINT pk_Customer
 ```
 ## Alter Primary key in Table
 ```sql
